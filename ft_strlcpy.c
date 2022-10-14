@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 char *ft_strlcpy(char *dest, char *src)
 {
     int i;
@@ -9,4 +11,12 @@ char *ft_strlcpy(char *dest, char *src)
         i++;
     }
     return (dest);
+}
+
+int main()
+{
+    char src = "hihihi";
+    char dest = "la";
+    printf("%s", ft_strlcpy(dest, src));
+    return (0);
 }
