@@ -7,14 +7,3 @@ int ft_toupper(int c)
     }
     return(0);
 }
-
-#include <stdio.h>
-
-int main()
-{
-    char c;
-    c = 'P';
-    printf("%c\n", ft_toupper(c));
-
-    return(0);
-}
