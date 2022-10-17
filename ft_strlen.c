@@ -6,15 +6,16 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 13:26:42 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/17 13:36:01 by vlenard          ###   ########.fr       */
+/*   Updated: 2022/10/17 16:23:35 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-size_t	strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	int	i;
+	i = 0;
 
 	while (s[i] != '\0')
 	{
