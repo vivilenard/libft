@@ -1,12 +1,24 @@
-typedef unsigned long size_t;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/17 13:26:42 by vlenard           #+#    #+#             */
+/*   Updated: 2022/10/17 13:36:01 by vlenard          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-size_t strlen(const char *s)
+#include <unistd.h>
+
+size_t	strlen(const char *s)
 {
-    int i;
+	int	i;
 
-    while (s[i] != '\0')
-    {
-        i++;
-    }
-    return(i);
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
