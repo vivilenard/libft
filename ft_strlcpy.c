@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 13:26:38 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/17 17:23:24 by vlenard          ###   ########.fr       */
+/*   Updated: 2022/10/18 09:57:33 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
+	int		n;
 
+	n = ft_strlen(src);
 	i = 0;
 	if (dstsize > 0)
 	{
@@ -26,5 +28,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		}
 		dst[i] = '\0';
 	}
-	return (i);
+	return (n);
 }

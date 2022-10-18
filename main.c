@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:34:33 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/18 14:05:58 by vlenard          ###   ########.fr       */
+/*   Updated: 2022/10/18 15:52:38 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,39 @@
 	int tft_memcpy()
 	{
 		printf("FT_MEMCPY\n");
-		ft_memcpy();
+		char dst[] = "hallihallo";
+		char src[] = "lala";
+		size_t n;
+		
+		n = 4;
+		ft_memcpy(dst, src, n);
+		printf("%s\n", ft_memcpy(dst, src, n));
+		return(0);
+	}
+	
+	int tft_memchr()
+	{
+		printf("FT_MEMCHR\n");
+		const char s[] = "lalilu";
+		char c;
+		size_t n;
+		
+		c = 'i';
+		n = 6;
+		printf("%s\n", ft_memchr(s, c, n));
+		
+		return(0);
+	}
+
+	int tft_memcmp()
+	{
+		printf("FT_MEMCMP\n");
+		return(0);
+	}
+
+	int tft_memmove()
+	{
+		printf("FT_MEMMOVE\n");
 		return(0);
 	}
 
@@ -132,6 +164,9 @@ int main()
 	tft_strnstr();
 	tft_memset();
 	tft_memcpy();
+	tft_memchr();
+	tft_memcmp();
+	tft_memmove();
 	return(0);
 }
 
