@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 12:11:28 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/18 14:16:35 by vlenard          ###   ########.fr       */
+/*   Updated: 2022/10/20 10:20:48 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		((unsigned char *)dst)[i] =  ((unsigned char *)src)[i];
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 		i++;
 	}
-	return(dst);
+	return (dst);
 }
