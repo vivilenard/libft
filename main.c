@@ -6,12 +6,52 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:34:33 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/18 15:52:38 by vlenard          ###   ########.fr       */
+/*   Updated: 2022/10/20 17:45:58 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+	int tft_isalnum()
+	{
+		printf("FT_ISALNUM\n");
+		char c;
+		c = '9';
+		
+		printf("%d\n", ft_isalnum(c));
+		return(0);
+	}
+	
+	int tft_isalpha()
+	{
+		printf("FT_ALPHA\n");
+		char c;
+		c = '9';
+		
+		printf("%d\n", ft_isalpha(c));
+		return(0);
+	}
+
+	int tft_isascii()
+	{
+		printf("FT_ASCII\n");
+		char c;
+		c = '9';
+		
+		printf("%d\n", ft_isascii(c));
+		return(0);
+	}
+	
+	int tft_isdigit()
+	{
+		printf("FT_ISDIGIT\n");
+		char c;
+		c = '9';
+		
+		printf("%d\n", ft_isdigit(c));
+		return(0);
+	}
+	
 	int tft_isprint()
 	{
 		printf("FT_ISPRINT\n");
@@ -21,7 +61,27 @@
 		printf("%d\n", ft_isprint(c));
 		return(0);
 	}
+	
+	int tft_toupper()
+	{
+		printf("FT_TOUPPER\n");
+		char c;
+		
+    	c = '@';
+    	printf("%c\n", ft_toupper(c));
+		return(0);
+	}
 
+	int tft_tolower()
+	{
+		printf("FT_TOLOWER\n");
+		char c;
+		
+    	c = '@';
+    	printf("%c\n", ft_tolower(c));
+		return(0);
+	}
+	
 	int tft_bzero()	
 	{
 		printf("FT_BZERO\n");
@@ -45,8 +105,9 @@
 	int tft_strlcat()
 	{
 		printf("FT_STRLCAT\n");
-		size_t dstsize = 3;
-		char dst[] = "Hallo ";
+		size_t dstsize = 5;
+		size_t dstsize2;
+		char dst[] = "Hi";
 		char src[] = "du";
 		
 		printf("%s\n", dst);
@@ -57,7 +118,8 @@
 		ft_strlcat(dst, src, dstsize);
 		printf("result is:\n");
 		printf("%s\n", dst);
-		printf("%zu\n", ft_strlcat(dst, src, dstsize));
+		dstsize2 = ft_strlcat(dst, src, dstsize);
+		printf("size %zu\n", dstsize2);
 		return(0);
 	}
 
@@ -77,11 +139,10 @@
 	int tft_strncmp()
 	{
 		printf("FT_STNCMP\n");
-		char s1[] = "Al";
+		char s1[] = "Apff";
 		char s2[] = "Apfel";
 		
-		ft_strncmp(s1, s2, 3);
-		printf("%d\n", ft_strncmp(s1, s2, 3));
+		printf("%d\n", ft_strncmp(s1, s2, 6));
 
 		return(0);
 	}
@@ -144,18 +205,47 @@
 	int tft_memcmp()
 	{
 		printf("FT_MEMCMP\n");
+		char s1[] = "Apff";
+		char s2[] = "Apfel";
+		
+		ft_memcmp(s1, s2, 4);
+		printf("%d\n", ft_memcmp(s1, s2, 4));
 		return(0);
 	}
 
 	int tft_memmove()
 	{
 		printf("FT_MEMMOVE\n");
+		char dst[] = "Kuchenteller";
+		char src[] = "Apfelkuchen";
+		size_t len;
+
+		len = 12;
+		ft_memmove(dst, src, len);
+		printf("%s\n", ft_memmove(dst, src, len));
 		return(0);
 	}
 
+	int tft_atoi()
+	{
+		printf("FT_ATOI\n");
+		 char str[] = "------8";
+		// char str[] = "-9";
+		int v;
+
+		v = ft_atoi(str);
+		printf("%d\n", v);
+		return(0);
+	}
 int main()
 {
+	tft_isalnum();
+	tft_isalpha();
+	tft_isascii();
+	tft_isdigit();
 	tft_isprint();
+	tft_toupper();
+	tft_tolower();
 	tft_bzero();
 	tft_strlen();
 	tft_strlcat();
@@ -167,6 +257,7 @@ int main()
 	tft_memchr();
 	tft_memcmp();
 	tft_memmove();
+	tft_atoi();
 	return(0);
 }
 
