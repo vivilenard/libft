@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:34:33 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/20 17:45:58 by vlenard          ###   ########.fr       */
+/*   Updated: 2022/10/21 15:16:40 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,31 @@
 		return (0);
 	}
 
+	int tft_strchr(void)
+	{
+		printf("FT_STRCHR\n");
+		char s[] = "jodhooooohfoi";
+		unsigned char c;
+		
+		c = '\0';
+		printf("%s\n", ft_strchr(s, c));
+		printf("%d\n", c);
+		
+		return(0);
+	}
+
+	int tft_strrchr(void)
+	{
+		printf("FT_STRRCHR\n");
+		char s[] = "ajedohfjeeefoi";
+		unsigned char c;
+		
+		c = 'y';
+		printf("%s\n", ft_strrchr(s, c));
+		// printf("%d\n", c);
+		return(0);
+	}
+
 	int tft_strlcat()
 	{
 		printf("FT_STRLCAT\n");
@@ -155,7 +180,7 @@
 		const char *ptr;
 		size_t len;
 
-		len = 6;
+		len = 9;
 		ptr = ft_strnstr(haystack, needle, len); 
 		printf("%s\n", ptr);
 		return(0);
@@ -216,12 +241,13 @@
 	int tft_memmove()
 	{
 		printf("FT_MEMMOVE\n");
-		char dst[] = "Kuchenteller";
-		char src[] = "Apfelkuchen";
+		char dst[] = "Hallo";
+		char src[] = "Loliiiii";
 		size_t len;
 
-		len = 12;
+		len = 4;
 		ft_memmove(dst, src, len);
+		printf("str is %zu dst is %zu\n", (size_t)src, (size_t)dst);
 		printf("%s\n", ft_memmove(dst, src, len));
 		return(0);
 	}
@@ -248,6 +274,8 @@ int main()
 	tft_tolower();
 	tft_bzero();
 	tft_strlen();
+	tft_strchr();
+	tft_strrchr();
 	tft_strlcat();
 	tft_strlcpy();
 	tft_strncmp();
