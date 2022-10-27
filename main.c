@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:34:33 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/21 15:16:40 by vlenard          ###   ########.fr       */
+/*   Updated: 2022/10/27 12:40:18 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -263,6 +263,34 @@
 		printf("%d\n", v);
 		return(0);
 	}
+
+	int tft_calloc ()
+	{
+
+		printf("FT_CALLOC\n");
+		size_t n;
+		size_t size;
+		char *a;
+
+		n = SIZE_MAX;
+		size = (sizeof(char));
+
+		a = ft_calloc(n, size);
+		printf("%s\n", a);
+		return (0);
+	}
+
+	int tft_strdup ()
+	{
+		printf("FT_STRDUP\n");
+		char s[] = "laljiejija";
+		char *scpy;
+		scpy = ft_strdup(s);
+		printf("%s\n", scpy);
+		free(scpy);
+		return (0);
+	}
+	
 int main()
 {
 	tft_isalnum();
@@ -286,6 +314,8 @@ int main()
 	tft_memcmp();
 	tft_memmove();
 	tft_atoi();
+	tft_calloc();
+	tft_strdup();
 	return(0);
 }
 
