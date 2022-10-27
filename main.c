@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:34:33 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/27 12:40:18 by vlenard          ###   ########.fr       */
+/*   Updated: 2022/10/27 16:22:20 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -290,6 +290,20 @@
 		free(scpy);
 		return (0);
 	}
+
+	int tft_substr()
+	{
+		printf("FT_SUBSTR\n");
+		char s[] = "";
+		int start;
+		size_t len;
+		
+		start = 7;
+		len = 1;
+		
+		printf("%s\n", ft_substr(s, start, len));
+		return (0);
+	}
 	
 int main()
 {
@@ -316,6 +330,7 @@ int main()
 	tft_atoi();
 	tft_calloc();
 	tft_strdup();
+	tft_substr();
 	return(0);
 }
 
