@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:34:33 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/27 16:22:20 by vlenard          ###   ########.fr       */
+/*   Updated: 2022/10/28 15:48:00 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -305,6 +305,27 @@
 		return (0);
 	}
 	
+	int tft_strjoin ()
+	{
+		printf("FT_STRJOIN\n");
+		char s1[] = "hi";
+		char s2[] = "dulappen";
+		char *s;
+		s = ft_strjoin(s1, s2);
+		printf("Ergebnis: %s\n", s);
+		return (0);
+	}
+
+	int tft_strtrim ()
+	{
+		printf("FT_STRTRIM\n");
+		char s1[] = "apfe";
+		char set[] = "a";
+		
+		printf("%s\n", ft_strtrim(s1, set));
+		return (0);
+	}
+	
 int main()
 {
 	tft_isalnum();
@@ -331,6 +352,8 @@ int main()
 	tft_calloc();
 	tft_strdup();
 	tft_substr();
+	tft_strjoin();
+	tft_strtrim();
 	return(0);
 }
 

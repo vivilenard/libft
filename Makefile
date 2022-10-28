@@ -6,18 +6,19 @@
 #    By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 15:04:49 by vlenard           #+#    #+#              #
-#    Updated: 2022/10/21 14:33:33 by vlenard          ###   ########.fr        #
+#    Updated: 2022/10/28 10:54:07 by vlenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = 	main.c ft_isdigit.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isprint.c \
+SRC = 	ft_isdigit.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isprint.c \
 		ft_toupper.c ft_tolower.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c \
 		ft_strnstr.c ft_bzero.c ft_memset.c ft_memcpy.c ft_memchr.c ft_memcmp.c \
-		ft_memmove.c ft_atoi.c ft_strchr.c ft_strrchr.c
+		ft_memmove.c ft_atoi.c ft_strchr.c ft_strrchr.c ft_calloc.c ft_strdup.c \
+		ft_substr.c ft_strjoin.c ft_strtrim.c
 
 all: compile
 compile: lib
-	gcc libft.a 
+	gcc main.c libft.a 
 lib:
 	gcc -Wall -Werror -Wextra -c $(SRC)
 	ar rcv libft.a *.o
