@@ -6,7 +6,7 @@
 /*   By: karllenard <karllenard@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:34:33 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/29 23:04:32 by karllenard       ###   ########.fr       */
+/*   Updated: 2022/10/30 00:18:22 by karllenard       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -326,6 +326,13 @@
 		return (0);
 	}
 
+	int tft_itoa ()
+	{
+		printf("FT_ITOA\n");
+		printf("%s\n", ft_itoa(-567));
+		return(0);
+	}
+
 	int tft_putchar()
 	{
 		printf("FT_PUTCHAR\n");
@@ -396,6 +403,7 @@ int main()
 	tft_substr();
 	tft_strjoin();
 	tft_strtrim();
+	tft_itoa();
 	tft_putchar();
 	tft_putstr();
 	tft_putnbr();
