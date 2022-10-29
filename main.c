@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: karllenard <karllenard@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:34:33 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/28 15:48:00 by vlenard          ###   ########.fr       */
+/*   Updated: 2022/10/29 23:04:32 by karllenard       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -325,7 +325,49 @@
 		printf("%s\n", ft_strtrim(s1, set));
 		return (0);
 	}
+
+	int tft_putchar()
+	{
+		printf("FT_PUTCHAR\n");
+		char c = 'a';
+		int fd = 1;
+		ft_putchar_fd(c, fd);
+		printf("\n");
+		return (0);
+	}
+
+	int tft_putstr()
+	{
+		printf("FT_PUTSTR\n");
+		char s[] = "hallo";
+		int fd = 1;
+		ft_putstr_fd(s, fd);
+		printf("\n");
+
+		return(0);
+	}
+
+	int tft_putnbr()
+	{
+		printf("FT_PUTNBR\n");
+		int n = 2147483647;
+		int fd = 1;
+		ft_putnbr_fd(n, fd);
+		printf("\n");
+
+		return (0);
+	}
+
+	int tft_putendl()
+	{
+		printf("FT_PUTENDL\n");
+		char s[] = "hallo";
+		int fd = 1;
+		ft_putendl_fd(s, fd);
+		return (0);
+	}
 	
+
 int main()
 {
 	tft_isalnum();
@@ -354,6 +396,10 @@ int main()
 	tft_substr();
 	tft_strjoin();
 	tft_strtrim();
+	tft_putchar();
+	tft_putstr();
+	tft_putnbr();
+	tft_putendl();
 	return(0);
 }
 
