@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/30 15:02:02 by vlenard           #+#    #+#             */
+/*   Updated: 2022/10/30 15:16:36 by vlenard          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-int *ft_vz(char *s, size_t vz)
+
+int	*ft_vz(char *s, size_t vz)
 {
 	if (vz == 1)
 		s[0] = '-';
@@ -10,7 +23,8 @@ int *ft_vz(char *s, size_t vz)
 	}
 	return (0);
 }
-int *ft_allocation(char *s, size_t count, size_t vz, size_t n)
+
+int	*ft_allocation(char *s, size_t count, size_t vz, size_t n)
 {
 	s[count + vz] = '\0';
 	count--;
@@ -23,14 +37,26 @@ int *ft_allocation(char *s, size_t count, size_t vz, size_t n)
 	s[count + vz] = n % 10 + '0';
 	return (0);
 }
-char *ft_itoa(int n)
+
+int	ft_howmanydigits(int n, size_t count)
 {
-	size_t      i;
-	size_t      count;
-	size_t      vz;
-	char        *s;
+	size_t	i;
 
 	i = 1;
+	while (n / i > 0)
+	{
+		i = i * 10;
+		count++;
+	}
+	return (count);
+}
+
+char	*ft_itoa(int n)
+{
+	size_t	count;
+	size_t	vz;
+	char	*s;
+
 	vz = 0;
 	count = 0;
 	if (n == -2147483648)
@@ -45,11 +71,7 @@ char *ft_itoa(int n)
 	}
 	if (n == 0)
 		count = 1;
-	while (n / i > 0)
-	{
-		i = i * 10;
-		count++;
-	}
+	count = ft_howmanydigits(n, count);
 	s = malloc((count + vz + 1) * sizeof(char));
 	printf("%zu\n", count);
 	ft_vz(s, vz);
