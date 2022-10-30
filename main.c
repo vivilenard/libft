@@ -6,7 +6,7 @@
 /*   By: karllenard <karllenard@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:34:33 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/30 10:13:14 by karllenard       ###   ########.fr       */
+/*   Updated: 2022/10/30 20:30:53 by karllenard       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -391,6 +391,14 @@
 		return (0);
 	}
 	
+	void tft_split()
+	{
+		printf("FT_SPLIT\n");
+		char const s[] = "Aloha hi";
+		char *strs;
+		char c = 'h';
+		strs = ft_split(s, c);
+	}
 
 int main()
 {
@@ -426,6 +434,7 @@ int main()
 	tft_putstr();
 	tft_putnbr();
 	tft_putendl();
+	tft_split();
 	return(0);
 }
 
