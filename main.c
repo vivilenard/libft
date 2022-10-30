@@ -6,7 +6,7 @@
 /*   By: karllenard <karllenard@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:34:33 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/30 00:18:22 by karllenard       ###   ########.fr       */
+/*   Updated: 2022/10/30 10:13:14 by karllenard       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -333,6 +333,23 @@
 		return(0);
 	}
 
+	char addOne(unsigned int i, char c)
+	{
+		c = c + 1;
+		return (c);
+	}
+
+	int tft_strmapi()
+	{
+		printf("FT_STRMAPI\n");
+		char s[] = "1234";
+		unsigned int i = 0;
+		char c = s[i];
+		
+		ft_strmapi(s, addOne(i, c));
+		return (0);
+	}
+
 	int tft_putchar()
 	{
 		printf("FT_PUTCHAR\n");
@@ -404,6 +421,7 @@ int main()
 	tft_strjoin();
 	tft_strtrim();
 	tft_itoa();
+	tft_strmapi();
 	tft_putchar();
 	tft_putstr();
 	tft_putnbr();
