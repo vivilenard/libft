@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: karllenard <karllenard@student.42.fr>      +#+  +:+       +#+        */
+/*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:34:33 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/30 20:30:53 by karllenard       ###   ########.fr       */
+/*   Updated: 2022/10/31 18:39:29 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -346,7 +346,7 @@
 		unsigned int i = 0;
 		char c = s[i];
 		
-		ft_strmapi(s, addOne(i, c));
+		ft_strmapi(s, addOne);
 		return (0);
 	}
 
@@ -391,13 +391,15 @@
 		return (0);
 	}
 	
-	void tft_split()
+	int tft_split()
 	{
 		printf("FT_SPLIT\n");
-		char const s[] = "Aloha hi";
-		char *strs;
-		char c = 'h';
-		strs = ft_split(s, c);
+		char const s[] = "hi";
+		char **split;
+		char c = ' ';
+		split = ft_split(s, c);
+		// printf("%s\n", split[0]);
+		return(0);
 	}
 
 int main()
