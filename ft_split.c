@@ -6,23 +6,48 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:27:05 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/31 18:36:28 by vlenard          ###   ########.fr       */
+/*   Updated: 2022/11/01 14:06:27 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_countstrs(char const *s, char c)
+int ft_howmanyc(char *s, char c, int count, int flag)
+{
+	while (s[count] == c)
+	{
+		count++;
+		flag++;
+	}
+	if (s[count] == '\0')
+		return(-1);
+	return(flag);
+}
+
+int ft_countstrs(char *s, char c)
 {
 	int i;
 	int count;
+	int flag;
 	i = 0;
 	count = 0;
+	flag = 0;
+	while (s[i] == c)
+		i++;
+	if (s[i] == '\0')
+		return (0);
 	while (s[i])
 	{
-		if (s[i] == c && i != 0)
+		flag = ft_howmanyc(s, c, i, 0);
+		if (flag > 0)
+		{
 			count++;
-		i++;
+			i = i + flag;
+		}
+		else if (flag == 0)
+			i++;
+		else if (flag < 0)
+			return (count + 1);
 	}
 	return (count + 1);
 }
@@ -36,43 +61,39 @@ int ft_splitlen(char *strbuff, int c)
 	return(i);
 }
 
-int ft_howmanyc(char *strbuff, char c, int count, int flag)
-{
-	while (strbuff[count] == c)
-	{
-		count++;
-		flag++;
-	}
-	if (strbuff[count] == '\0')
-		return(-1);
-	return(flag);
-}
-
 void ft_assignstrs(char *strbuff, char **split, int c, int n, int start)
 {
 	int count;
 	int flag;
-	strbuff = ft_strdup(strbuff + start);
-	split[n] = malloc((ft_splitlen(strbuff, c) + 1) * sizeof(char));
-	ft_strlcpy(split[n], strbuff, ft_splitlen(strbuff, c) + 1);
-	printf("STRING: %s\n", split[n]);
-	printf("String laenge: %zu\n", ft_strlen(split[n]));
-	printf("splitlen is %d\n", ft_splitlen(strbuff, c));
+	char *strbuff1;
+	strbuff1 = ft_strdup(strbuff + start);
 	free(strbuff);
+	strbuff = NULL;
+				// printf("I bims Strbuff %s\n", strbuff);
+	split[n] = malloc((ft_splitlen(strbuff1, c) + 1) * sizeof(char));
+	ft_strlcpy(split[n], strbuff1, ft_splitlen(strbuff1, c) + 1);
+				printf(" STRING: %s, n = %d\n", split[n], n);
+				// printf("String laenge: %zu\n", ft_strlen(split[n]));
+				// printf("splitlen is %d\n", ft_splitlen(strbuff1, c));
 	count = 0;
 	flag = 0;
-	while (strbuff[count] != '\0')
+	while (strbuff1[count] != '\0')
 	{
-		if (strbuff[count] == c)
+		if (strbuff1[count] == c)
 		{ 
-			flag = ft_howmanyc(strbuff, c, count, flag);
+			flag = ft_howmanyc(strbuff1, c, count, flag);
 			break;
 		}
 		count++;
 	}
-	printf("%d\n", flag);
+	//printf("%d\n", flag);
 	if (flag > 0)
-		ft_assignstrs(strbuff, split, c, n++, ft_splitlen(strbuff, c) + flag);
+		ft_assignstrs(strbuff1, split, c, n + 1, ft_splitlen(strbuff1, c) + flag);
+	if (flag < 0)
+	{
+		free(strbuff1);
+		strbuff1 = NULL;
+	}
 }
 
 char **ft_split(char const *s, char c)
@@ -81,14 +102,21 @@ char **ft_split(char const *s, char c)
 	char *strbuff;
 	int n;
 	int i;
+	int	strcount;
 	i = 0;
 	n = 0;
-	if (!(split = malloc((ft_countstrs(s, c) + 1) * sizeof(char *))))
+	strcount = ft_countstrs((char *)s, c);
+	printf("how many strings: %d\n", strcount);
+	if (!(split = malloc((strcount + 1) * sizeof(char *))))
 		return (NULL);
-	while (s[i] == c)
-		i++;
-	strbuff = ft_strdup(s + i);
-	ft_assignstrs(strbuff, split, c, n, 0);
-	
+	if (strcount > 0)
+	{
+		while (s[i] == c)
+			i++;
+		strbuff = ft_strdup(s + i);
+		ft_assignstrs(strbuff, split, c, n, 0);
+			// printf("leftover Strbuff %s\n", strbuff);
+	}
+	split[strcount] = NULL;
 	return(split);
 }
