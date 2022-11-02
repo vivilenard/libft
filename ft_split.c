@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: karllenard <karllenard@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:27:05 by vlenard           #+#    #+#             */
-/*   Updated: 2022/11/01 14:06:27 by vlenard          ###   ########.fr       */
+/*   Updated: 2022/11/02 15:03:22 by karllenard       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,12 @@ void ft_assignstrs(char *strbuff, char **split, int c, int n, int start)
 				// printf("String laenge: %zu\n", ft_strlen(split[n]));
 				// printf("splitlen is %d\n", ft_splitlen(strbuff1, c));
 	count = 0;
-	flag = 0;
+	flag = -1;
 	while (strbuff1[count] != '\0')
 	{
 		if (strbuff1[count] == c)
 		{ 
-			flag = ft_howmanyc(strbuff1, c, count, flag);
+			flag = ft_howmanyc(strbuff1, c, count, 0);
 			break;
 		}
 		count++;
