@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: karllenard <karllenard@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 17:09:52 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/20 14:28:01 by vlenard          ###   ########.fr       */
+/*   Updated: 2022/11/02 18:21:07 by karllenard       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,49 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
+	size_t idst;
+	size_t initialdstsize;
+	size_t i;
+
+	initialdstsize = ft_strlen(dst);
+	idst = ft_strlen(dst);
+	i = 0;
+	if (dstsize == 0)
+		return (ft_strlen(src));
+	if (dstsize <= initialdstsize)
+		return (dstsize + ft_strlen(src));
+	while (idst < dstsize - 1 && src[i])
+	{
+		dst[idst] = src[i];
+		idst++;
+		i++;
+	}
+	dst[idst] = '\0';
+	return (initialdstsize + ft_strlen(src));
+}
+
+
+
+
+
+
+/*size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+{
 	size_t	i;
 	size_t	n;
-	size_t	dstlen;
 
 	i = 0;
 	n = ft_strlen(dst);
-	if (ft_strlen(src) > 0)
+	while (i < (dstsize - (n + 1)) && src[i] != '\0')
 	{
-		while (i < (dstsize - n - 1))
-		{
-			dst[(n - 1) + 1 + i] = src[i];
-			i++;
-		}
+		dst[n + i] = src[i];
+		i++;
 	}
-	if (dstsize != 0)
+	if (i > 0)
 	{
-		dst[dstsize - 1] = '\0';
+		dst[i + n] = '\0';
 	}
-	dstlen = ft_strlen(dst);
-	return (dstlen);
+	printf("i bims dst %s\n", dst);
+	return (ft_strlen(dst));
 }
+*/

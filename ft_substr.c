@@ -6,7 +6,7 @@
 /*   By: karllenard <karllenard@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 14:33:45 by vlenard           #+#    #+#             */
-/*   Updated: 2022/11/02 15:25:04 by karllenard       ###   ########.fr       */
+/*   Updated: 2022/11/02 18:33:33 by karllenard       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	if (ft_strlen(s) < start)
-		return(NULL);
+	if (start > ft_strlen(s))
+		return (NULL);
 	ss = malloc((ft_truelen(s, start, len) + 1) * sizeof(char));
 	if (ss == NULL)
 		return (NULL);

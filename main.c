@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: karllenard <karllenard@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:34:33 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/31 18:39:29 by vlenard          ###   ########.fr       */
+/*   Updated: 2022/11/02 18:26:08 by karllenard       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,21 +130,12 @@
 	int tft_strlcat()
 	{
 		printf("FT_STRLCAT\n");
-		size_t dstsize = 5;
-		size_t dstsize2;
-		char dst[] = "Hi";
-		char src[] = "du";
+		char dst[1] = "";
+		char src[] = "duu";
 		
-		printf("%s\n", dst);
-		printf("%zu\n", ft_strlen(dst));
-		printf("%s\n", src);
-		printf("%zu\n", ft_strlen(src));
-
-		ft_strlcat(dst, src, dstsize);
-		printf("result is:\n");
-		printf("%s\n", dst);
-		dstsize2 = ft_strlcat(dst, src, dstsize);
-		printf("size %zu\n", dstsize2);
+		printf("size %zu\n", ft_strlcat(dst, src, 1));
+		printf("i bims dst %s\n", dst);
+		printf("size %zu\n", ft_strlen(dst));
 		return(0);
 	}
 
@@ -294,12 +285,12 @@
 	int tft_substr()
 	{
 		printf("FT_SUBSTR\n");
-		char s[] = "";
+		char s[] = "hallo";
 		int start;
 		size_t len;
 		
-		start = 7;
-		len = 1;
+		start = 100;
+		len = 2;
 		
 		printf("%s\n", ft_substr(s, start, len));
 		return (0);
@@ -415,7 +406,6 @@ int main()
 	tft_strlen();
 	tft_strchr();
 	tft_strrchr();
-	tft_strlcat();
 	tft_strlcpy();
 	tft_strncmp();
 	tft_strnstr();
@@ -437,6 +427,7 @@ int main()
 	tft_putnbr();
 	tft_putendl();
 	tft_split();
+	tft_strlcat();
 	return(0);
 }
 
