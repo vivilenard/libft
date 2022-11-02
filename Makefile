@@ -6,7 +6,7 @@
 #    By: karllenard <karllenard@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 15:04:49 by vlenard           #+#    #+#              #
-#    Updated: 2022/11/02 15:09:31 by karllenard       ###   ########.fr        #
+#    Updated: 2022/11/02 19:10:06 by karllenard       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,17 +16,25 @@ SRC = 	ft_isdigit.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isprint.c \
 		ft_memmove.c ft_atoi.c ft_strchr.c ft_strrchr.c ft_calloc.c ft_strdup.c \
 		ft_substr.c ft_strjoin.c ft_strtrim.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 		ft_putnbr_fd.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_split.c
+BONUS = ft_lstnew.c
 
-all: compile
+
 compile: lib
 	gcc main.c libft.a 
-lib:
-	gcc -Wall -Werror -Wextra -c $(SRC)
+compilebonus: lib
+	gcc mainbonus.c libft.a
+lib: 
 	ar rcv libft.a *.o
-run: all
-	&& ./a.out
+sourcefiles:
+	gcc -Wall -Werror -Wextra -c $(SRC)
+bonusfiles:
+	gcc -Wall -Werror -Wextra -c $(BONUS)
 n:
 	norminette $(SRC)
+m: sourcefiles compile
+	./a.out
+b: bonusfiles compilebonus
+	./a.out
 clean: 
 	/bin/rm -f *.o ./a.out
 fclean: clean
