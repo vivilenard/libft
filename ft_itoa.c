@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 15:02:02 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/30 15:16:36 by vlenard          ###   ########.fr       */
+/*   Updated: 2022/11/03 16:06:48 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,8 @@ char	*ft_itoa(int n)
 		count = 1;
 	count = ft_howmanydigits(n, count);
 	s = malloc((count + vz + 1) * sizeof(char));
-	printf("%zu\n", count);
+	if (!s)
+		return(NULL);
 	ft_vz(s, vz);
 	ft_allocation(s, count, vz, n);
 	return (s);

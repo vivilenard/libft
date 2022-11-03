@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 10:53:00 by vlenard           #+#    #+#             */
-/*   Updated: 2022/10/28 15:49:30 by vlenard          ###   ########.fr       */
+/*   Updated: 2022/11/03 14:57:10 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 		n++;
 	}
 	i = ft_strlen(s1) - 1;
-	printf("%d\n", i);
 	while (i >= 0)
 	{
 		if (ft_strchr(set, s1[i]) == 0)
 			break ;
 		i--;
 	}
-	printf("%d\n", i);
 	str = ft_substr((char *)s1, n, (i + 1) - n);
 	return (str);
 }

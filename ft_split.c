@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: karllenard <karllenard@student.42.fr>      +#+  +:+       +#+        */
+/*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:27:05 by vlenard           #+#    #+#             */
-/*   Updated: 2022/11/02 15:03:22 by karllenard       ###   ########.fr       */
+/*   Updated: 2022/11/03 14:54:40 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,9 @@ void ft_assignstrs(char *strbuff, char **split, int c, int n, int start)
 	strbuff1 = ft_strdup(strbuff + start);
 	free(strbuff);
 	strbuff = NULL;
-				// printf("I bims Strbuff %s\n", strbuff);
 	split[n] = malloc((ft_splitlen(strbuff1, c) + 1) * sizeof(char));
 	ft_strlcpy(split[n], strbuff1, ft_splitlen(strbuff1, c) + 1);
-				printf(" STRING: %s, n = %d\n", split[n], n);
+				//printf(" STRING: %s, n = %d\n", split[n], n);
 				// printf("String laenge: %zu\n", ft_strlen(split[n]));
 				// printf("splitlen is %d\n", ft_splitlen(strbuff1, c));
 	count = 0;
@@ -105,8 +104,10 @@ char **ft_split(char const *s, char c)
 	int	strcount;
 	i = 0;
 	n = 0;
+	if (!s)
+		return(NULL);
 	strcount = ft_countstrs((char *)s, c);
-	printf("how many strings: %d\n", strcount);
+		//printf("how many strings: %d\n", strcount);
 	if (!(split = malloc((strcount + 1) * sizeof(char *))))
 		return (NULL);
 	if (strcount > 0)

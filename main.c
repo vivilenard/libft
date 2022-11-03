@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: karllenard <karllenard@student.42.fr>      +#+  +:+       +#+        */
+/*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:34:33 by vlenard           #+#    #+#             */
-/*   Updated: 2022/11/02 18:26:08 by karllenard       ###   ########.fr       */
+/*   Updated: 2022/11/03 17:05:13 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -285,12 +285,12 @@
 	int tft_substr()
 	{
 		printf("FT_SUBSTR\n");
-		char s[] = "hallo";
+		char s[] = "lorem ipsum dolor sit amet";
 		int start;
 		size_t len;
 		
-		start = 100;
-		len = 2;
+		start = 0;
+		len = 10;
 		
 		printf("%s\n", ft_substr(s, start, len));
 		return (0);
@@ -417,7 +417,6 @@ int main()
 	tft_atoi();
 	tft_calloc();
 	tft_strdup();
-	tft_substr();
 	tft_strjoin();
 	tft_strtrim();
 	tft_itoa();
@@ -428,6 +427,7 @@ int main()
 	tft_putendl();
 	tft_split();
 	tft_strlcat();
+	tft_substr();
 	return(0);
 }
 

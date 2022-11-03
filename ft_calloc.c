@@ -16,7 +16,7 @@ void	*ft_calloc(size_t n, size_t size)
 {
 	void	*ptr;
 
-	if (size > sizeof(unsigned int))
+	if (size > sizeof(long unsigned int))
 		return (NULL);
 	ptr = malloc(n * size);
 	if (ptr == NULL)
