@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:37:13 by vlenard           #+#    #+#             */
-/*   Updated: 2022/11/03 15:46:46 by vlenard          ###   ########.fr       */
+/*   Updated: 2022/11/04 13:12:08 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	ci;
 
 	ci = c;

@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:34:33 by vlenard           #+#    #+#             */
-/*   Updated: 2022/11/03 17:05:13 by vlenard          ###   ########.fr       */
+/*   Updated: 2022/11/04 12:12:22 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -285,14 +285,16 @@
 	int tft_substr()
 	{
 		printf("FT_SUBSTR\n");
-		char s[] = "lorem ipsum dolor sit amet";
+		char s[] = "hola";
+		char *p;
 		int start;
 		size_t len;
 		
-		start = 0;
-		len = 10;
-		
-		printf("%s\n", ft_substr(s, start, len));
+		start = 2;
+		len = 3;
+		p = ft_substr(s, start, len);
+		printf("%s\n", p);
+		free(p);
 		return (0);
 	}
 	
@@ -385,11 +387,11 @@
 	int tft_split()
 	{
 		printf("FT_SPLIT\n");
-		char const s[] = "hi";
+		char const s[] = "\0";
 		char **split;
-		char c = ' ';
+		char c = '\0aab';
 		split = ft_split(s, c);
-		// printf("%s\n", split[0]);
+		printf("%s\n", split[0]);
 		return(0);
 	}
 
