@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 10:26:35 by vlenard           #+#    #+#             */
-/*   Updated: 2022/11/04 14:31:38 by vlenard          ###   ########.fr       */
+/*   Created: 2022/11/04 17:32:39 by vlenard           #+#    #+#             */
+/*   Updated: 2022/11/04 19:20:33 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+void ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *lst;
-	lst = (t_list*)malloc(sizeof(*lst));
-	if (!lst)
-		return(NULL);
-	lst->content = content;
-	lst->next = NULL;
-	return (lst);
+	if (!new || !*lst)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	
+	else if (*lst != NULL)
+	{
+		*lst = ft_lstlast(*lst);
+		(*lst)->next = new;
+	}
 }
