@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:59:12 by vlenard           #+#    #+#             */
-/*   Updated: 2023/02/17 14:11:29 by vlenard          ###   ########.fr       */
+/*   Updated: 2023/02/20 08:23:02 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,5 @@ int			ft_iss(va_list args, int print_length);
 int			ft_putandcountstr(char *str, int print_length);
 double		ft_atodouble(char *str);
 void		ft_free2d(char **s);
+int			ft_iswhitespace(char c);
 #endif
