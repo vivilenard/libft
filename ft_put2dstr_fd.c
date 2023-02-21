@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 14:29:55 by vlenard           #+#    #+#             */
-/*   Updated: 2023/02/21 14:38:29 by vlenard          ###   ########.fr       */
+/*   Updated: 2023/02/21 16:19:25 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_put2dstr_fd(char **s, int fd)
 	i = 0;
 	while (s[i])
 	{
-		ft_putendl(s, fd);
+		ft_putendl_fd(s[i], fd);
 		i++;
 	}
 }
