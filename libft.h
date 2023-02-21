@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:59:12 by vlenard           #+#    #+#             */
-/*   Updated: 2023/02/20 08:23:02 by vlenard          ###   ########.fr       */
+/*   Updated: 2023/02/21 14:38:59 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,5 @@ int			ft_putandcountstr(char *str, int print_length);
 double		ft_atodouble(char *str);
 void		ft_free2d(char **s);
 int			ft_iswhitespace(char c);
+void		ft_put2dstr_fd(char **s, int fd);
 #endif
