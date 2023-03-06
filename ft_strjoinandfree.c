@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 10:25:48 by vlenard           #+#    #+#             */
-/*   Updated: 2023/03/06 17:13:22 by vlenard          ###   ########.fr       */
+/*   Updated: 2023/03/06 18:00:31 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,9 @@ char	*ft_strjoinandfree(char *s1, char *s2)
 	str = malloc(len * sizeof(char));
 	if (!str)
 		return (NULL);
-	i = 0;
-	while (s1 && s1[i] != '\0')
-	{
+	i = -1;
+	while (s1 && s1[++i] != '\0')
 		str[i] = s1[i];
-		i++;
-	}
 	n = 0;
 	while (s2 && s2[n] != '\0')
 	{
@@ -37,5 +34,7 @@ char	*ft_strjoinandfree(char *s1, char *s2)
 		n++;
 	}
 	str[len - 1] = '\0';
-	return (free (s1), str);
+	if (s1)
+		free (s1);
+	return (str);
 }
