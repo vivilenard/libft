@@ -6,13 +6,13 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:35:51 by vlenard           #+#    #+#             */
-/*   Updated: 2022/12/02 13:13:02 by vlenard          ###   ########.fr       */
+/*   Updated: 2023/03/12 16:37:15 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen_gnl(const char *s)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	char	*str;
 	size_t	i;
@@ -41,7 +41,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	}
 	if (!s2)
 		return (NULL);
-	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	str = malloc((ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -55,7 +55,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (free (s1), free (s2), str);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr_gnl(const char *s, int c)
 {
 	size_t			i;
 	unsigned char	uc;
@@ -77,14 +77,14 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-char	*ft_strdup(char *s)
+char	*ft_strdup_gnl(char *s)
 {
 	size_t	i;
 	size_t	len;
 	char	*scpy;
 
 	i = 0;
-	len = ft_strlen(s);
+	len = ft_strlen_gnl(s);
 	scpy = (char *)malloc((len + 1) * sizeof(char));
 	if (!scpy)
 		return (NULL);

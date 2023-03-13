@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:35:47 by vlenard           #+#    #+#             */
-/*   Updated: 2022/12/02 13:12:23 by vlenard          ###   ########.fr       */
+/*   Updated: 2023/03/12 16:34:59 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_readtostat(int fd, char *stat)
 	char	*buf;
 
 	flag = 9;
-	while (flag != 0 && ft_strchr(stat, '\n') == 0)
+	while (flag != 0 && ft_strchr_gnl(stat, '\n') == 0)
 	{
 		buf = malloc(BUFFER_SIZE + 1);
 		if (!buf)
@@ -29,7 +29,7 @@ char	*ft_readtostat(int fd, char *stat)
 		if (flag == 0)
 			return (free(buf), stat);
 		buf[flag] = '\0';
-		stat = ft_strjoin(stat, buf);
+		stat = ft_strjoin_gnl(stat, buf);
 	}
 	return (stat);
 }
@@ -50,7 +50,7 @@ char	*ft_addanend(char *stat, char **line, int i)
 		if (stat[i + 1] == '\0')
 			return (free (stat), NULL);
 	}
-	buf = ft_strdup(stat + i + 1);
+	buf = ft_strdup_gnl(stat + i + 1);
 	return (free (stat), buf);
 }
 
