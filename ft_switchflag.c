@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_switchflag.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 10:53:00 by vlenard           #+#    #+#             */
-/*   Updated: 2023/03/17 10:35:50 by vlenard          ###   ########.fr       */
+/*   Created: 2023/03/17 15:16:16 by vlenard           #+#    #+#             */
+/*   Updated: 2023/03/17 15:17:09 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+void ft_switchflag(int *flag)
 {
-	int		n;
-	int		i;
-	char	*str;
-
-	n = 0;
-	while (s1 && s1[n] != '\0')
-	{
-		if (ft_strchr(set, s1[n]) == 0)
-			break ;
-		n++;
-	}
-	i = ft_strlen(s1) - 1;
-	while (i >= 0)
-	{
-		if (ft_strchr(set, s1[i]) == 0)
-			break ;
-		i--;
-	}
-	str = ft_substr((char *)s1, n, (i + 1) - n);
-	return (str);
+	if (*flag == 0)
+		*flag = 1;
+	else if (*flag == 1)
+		*flag = 0;
 }

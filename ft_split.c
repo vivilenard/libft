@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:27:05 by vlenard           #+#    #+#             */
-/*   Updated: 2022/11/04 13:10:39 by vlenard          ###   ########.fr       */
+/*   Updated: 2023/03/18 11:34:42 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,12 +103,10 @@ char	**ft_split(char const *s, char c)
 {
 	char	**split;
 	char	*strbuff;
-	int		n;
 	int		i;
 	int		strcount;
 
 	i = 0;
-	n = 0;
 	if (c != '\0' && !s)
 		return (NULL);
 	strcount = ft_countstrs((char *)s, c);
@@ -125,5 +123,7 @@ char	**ft_split(char const *s, char c)
 		ft_assignstrs(strbuff, split, c, 0);
 	}
 	split[strcount] = 0;
+	if (!split[0])
+		free(split);
 	return (split);
 }
