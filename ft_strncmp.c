@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:43:00 by vlenard           #+#    #+#             */
-/*   Updated: 2022/11/04 12:29:07 by vlenard          ###   ########.fr       */
+/*   Updated: 2023/03/29 18:01:43 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	us1 = (unsigned char *)s1;
 	us2 = (unsigned char *)s2;
 	i = 0;
+	if (!s1 || !s2)
+		return (-1);
 	while (i != n)
 	{
 		if (us1[i] != us2[i])
