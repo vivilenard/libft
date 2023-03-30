@@ -6,7 +6,7 @@
 #    By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 15:04:49 by vlenard           #+#    #+#              #
-#    Updated: 2023/03/17 15:20:08 by vlenard          ###   ########.fr        #
+#    Updated: 2023/03/30 17:20:42 by vlenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ SRC = 	ft_isdigit.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isprint.c \
 		ft_printf.c ft_takearg.c ft_tohex.c ft_topointer.c ft_utoa.c ft_strcmp.c ft_atodouble.c \
 		ft_haystack.c ft_strjoinandfree.c ft_free2d.c ft_iswhitespace.c ft_put2dstr_fd.c \
 		ft_2darraylen.c ft_strjoin_free_opt.c ft_switchflag.c\
+		ft_char_is_in_str.c ft_duplicate_2d.c ft_is_char.c ft_is_num.c \
+		ft_strjoin_s_e.c \
 		get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
 SRCBONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 		ft_lstclear.c ft_lstiter.c ft_lstmap.c
