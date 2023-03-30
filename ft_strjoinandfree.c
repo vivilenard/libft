@@ -6,11 +6,19 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 10:25:48 by vlenard           #+#    #+#             */
-/*   Updated: 2023/03/14 11:20:01 by vlenard          ###   ########.fr       */
+/*   Updated: 2023/03/30 13:44:58 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	freestrings(char *s1, char *s2)
+{
+	if (s1)
+		free (s1);
+	if (s2)
+		free (s2);
+}
 
 char	*ft_strjoinandfree(char *s1, char *s2)
 {
@@ -36,9 +44,6 @@ char	*ft_strjoinandfree(char *s1, char *s2)
 	while (s2 && s2[n])
 		str[i++] = s2[n++];
 	str[i] = '\0';
-	if (s1)
-		free (s1);
-	if (s2)
-		free (s2);
+	freestrings(s1, s2);
 	return (str);
 }
