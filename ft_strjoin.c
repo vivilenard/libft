@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 10:25:48 by vlenard           #+#    #+#             */
-/*   Updated: 2023/03/06 13:25:50 by vlenard          ###   ########.fr       */
+/*   Updated: 2023/03/30 13:43:21 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	i = 0;
 	while (s1 && s1[i] != '\0')
-		{
-			str[i] = s1[i];
-			i++;
-		}
-
+	{
+		str[i] = s1[i];
+		i++;
+	}
 	n = 0;
 	while (s2 && s2[n] != '\0')
 	{
