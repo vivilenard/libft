@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 14:29:39 by vlenard           #+#    #+#             */
-/*   Updated: 2023/03/28 11:43:38 by vlenard          ###   ########.fr       */
+/*   Updated: 2023/04/06 11:12:25 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	ft_free2d(char **s)
 	int	i;
 
 	i = 0;
-	while (s && s[i])
+	if (!s)
+		return ;
+	while (s[i])
 	{
 		free(s[i]);
 		i++;
