@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:27:05 by vlenard           #+#    #+#             */
-/*   Updated: 2023/03/18 11:34:42 by vlenard          ###   ########.fr       */
+/*   Updated: 2023/04/06 14:10:46 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,6 @@ char	**ft_split(char const *s, char c)
 	}
 	split[strcount] = 0;
 	if (!split[0])
-		free(split);
+		return (free(split), split = NULL);
 	return (split);
 }

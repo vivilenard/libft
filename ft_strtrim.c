@@ -6,7 +6,7 @@
 /*   By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 10:53:00 by vlenard           #+#    #+#             */
-/*   Updated: 2023/03/17 10:35:50 by vlenard          ###   ########.fr       */
+/*   Updated: 2023/04/06 10:58:19 by vlenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 			break ;
 		i--;
 	}
+	
 	str = ft_substr((char *)s1, n, (i + 1) - n);
 	return (str);
 }
