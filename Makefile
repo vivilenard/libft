@@ -6,7 +6,7 @@
 #    By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 15:04:49 by vlenard           #+#    #+#              #
-#    Updated: 2023/03/30 17:20:42 by vlenard          ###   ########.fr        #
+#    Updated: 2023/09/04 16:23:35 by vlenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,11 +30,14 @@ OBJS = $(SRC:.c=.o)
 OBJBONUS = $(SRCBONUS:.c=.o)
 NAME = libft.a
 
+%.o: %.c
+		@ $(CC) $(CFLAGS) -c -o $@ $<
+
 all: $(NAME) 
 $(NAME) : $(OBJS) 
-		ar rcs $(NAME) $(OBJS) 
+		@ ar rcs $(NAME) $(OBJS) 
 bonus : $(OBJBONUS) 
-		ar rcs $(NAME) $(OBJBONUS)
+		@ ar rcs $(NAME) $(OBJBONUS)
 m: all
 		$(CC) libft.a main.c && ./a.out
 b: all bonus
