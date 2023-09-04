@@ -6,7 +6,7 @@
 #    By: vlenard <vlenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 15:04:49 by vlenard           #+#    #+#              #
-#    Updated: 2023/09/04 16:23:35 by vlenard          ###   ########.fr        #
+#    Updated: 2023/09/04 16:28:53 by vlenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,9 +45,9 @@ b: all bonus
 n:
 		norminette $(SRC) $(SRCBONUS)
 clean :
-		rm -f $(OBJS) $(OBJBONUS)
+		@ rm -f $(OBJS) $(OBJBONUS)
 fclean : clean
-		rm -f $(NAME)
+		@ rm -f $(NAME)
 re : fclean
 		$(MAKE) all
 .PHONY: all, m, b, n, clean, fclean, re
